@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scripture Translation Ministry</title>
+    <title>Oasis Scripture Fellowship Mission (OSFM)</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Configure Tailwind for Inter font -->
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Configure Tailwind & Fonts -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        /* Switched to Merriweather (Serif) and Source Sans 3 (Sans) */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap');
+        
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f7fafc; /* Light gray background */
+            font-family: 'Source Sans 3', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Merriweather', serif;
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
         }
     </style>
     <script>
@@ -19,267 +29,400 @@
             theme: {
                 extend: {
                     colors: {
-                        'primary-blue': '#1c3e72',
-                        'accent-teal': '#009688',
-                        'bg-light': '#f7fafc',
+                        primary: {
+                            DEFAULT: '#1e3a8a', /* Deep Classic Navy */
+                            light: '#3b82f6'
+                        },
+                        accent: {
+                            DEFAULT: '#b45309', /* Biblical Gold/Amber */
+                            light: '#d97706',
+                            bg: '#fffbeb'
+                        },
+                        stone: {
+                            50: '#fafaf9', /* Warm White */
+                            100: '#f5f5f4',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
                     }
                 }
             }
         }
     </script>
 </head>
-<body class="text-gray-800">
+<body class="bg-stone-50 text-stone-800 antialiased">
 
-    <!-- Header & Hero Section -->
-    <header class="bg-primary-blue text-white py-16 px-4 md:px-8 shadow-xl">
-        <div class="max-w-7xl mx-auto text-center">
-            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
-                Scripture Translation Ministry
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-header shadow-sm border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <div class="bg-primary/10 p-2 rounded-full">
+                        <i data-lucide="book-open" class="h-6 w-6 text-primary"></i>
+                    </div>
+                    <span class="font-heading font-bold text-xl tracking-tight text-stone-900">Oasis Scripture Fellowship</span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#donate" class="bg-primary text-white px-6 py-2.5 rounded-full hover:bg-blue-900 transition shadow-md font-medium tracking-wide">Support Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-24 lg:pt-48 lg:pb-36 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?q=80&w=2070&auto=format&fit=crop" alt="Open Bible on table" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-r from-stone-900/95 via-stone-900/80 to-stone-900/60"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-white/10 border border-white/20 text-amber-100 text-sm font-semibold mb-8 backdrop-blur-sm">
+                <i data-lucide="sun" class="w-4 h-4 text-amber-400"></i>
+                <span>Help • Hope • Healing</span>
+            </div>
+            
+            <h1 class="font-heading text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-tight mb-6 leading-tight drop-shadow-lg">
+                Bringing God's Word<br/>to Every Heart
             </h1>
-            <p class="text-xl sm:text-2xl font-light max-w-3xl mx-auto">
-                Make the Word of God available in every person's mother tongue.
+            
+            <p class="text-lg sm:text-xl text-stone-200 font-light max-w-2xl mx-auto mb-10 leading-relaxed">
+                Oasis Scripture Fellowship Mission transforms lives in North India through Scripture translation, compassion, and empowerment.
             </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#donate" class="px-8 py-4 bg-accent hover:bg-amber-700 text-white font-bold rounded-lg shadow-lg transform transition hover:-translate-y-1 flex items-center justify-center gap-2 border-b-4 border-amber-800">
+                    <i data-lucide="heart" class="w-5 h-5"></i> Partner With Us
+                </a>
+                <a href="#pillars" class="px-8 py-4 bg-transparent hover:bg-white/10 text-white border border-white/40 font-semibold rounded-lg backdrop-blur-sm transition flex items-center justify-center gap-2">
+                    Our Mission <i data-lucide="arrow-down" class="w-5 h-5"></i>
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-16">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-28">
 
-        <!-- 1. The Urgent Need: Purpose & Statistics -->
-        <section class="bg-white p-6 md:p-10 rounded-xl shadow-lg border-t-4 border-accent-teal">
-            <h2 class="text-3xl font-bold mb-6 text-primary-blue border-b pb-2">The Need in India</h2>
-            
-            <p class="text-lg leading-relaxed mb-6">
-                According to the People’s Linguistic Survey of India (PLSI), India has around <strong class="text-primary-blue">780 languages</strong>. Yet, the vast majority of people lack access to the Bible in their own language.
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-                <!-- Stat Card 1 -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
-                    <p class="text-4xl font-extrabold text-accent-teal">86</p>
-                    <p class="mt-2 font-semibold">Full Bible Translations Exist</p>
-                </div>
-                <!-- Stat Card 2 -->
-                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
-                    <p class="text-4xl font-extrabold text-accent-teal">88</p>
-                    <p class="mt-2 font-semibold">New Testament Translations Exist</p>
-                </div>
-                <!-- Stat Card 3 -->
-                <div class="p-6 bg-red-100 rounded-lg shadow-md">
-                    <p class="text-4xl font-extrabold text-red-600">500+</p>
-                    <p class="mt-2 font-semibold">Language Groups Without Scripture</p>
-                </div>
+        <!-- 1. Who We Are (O-S-F-M Pillars) -->
+        <section id="pillars" class="scroll-mt-24">
+            <div class="text-center mb-16">
+                <span class="text-accent font-bold tracking-wider uppercase text-sm">Our Foundation</span>
+                <h2 class="text-4xl font-bold text-stone-900 mt-2">Who We Are</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full opacity-50"></div>
+                <p class="mt-6 text-lg text-stone-600 max-w-2xl mx-auto">
+                    Functioning under Inter Culture International Ltd, OSFM is built on four biblical pillars of service.
+                </p>
             </div>
 
-            <p class="mt-6 text-lg leading-relaxed">
-                This means over 500 language groups, concentrated mostly in the <strong class="text-red-600">northern regions of India</strong>, still do not have access to the Word of God in their own language. Our calling is to serve these communities faithfully and lovingly.
-            </p>
-        </section>
-
-        <!-- 2. The Translation Process -->
-        <section class="bg-white p-6 md:p-10 rounded-xl shadow-lg">
-            <h2 class="text-3xl font-bold mb-6 text-primary-blue border-b pb-2">Our Translation Process</h2>
-            <p class="mb-6 text-lg">
-                Our translation work is primarily led by local Christians, ensuring the highest level of fluency and cultural understanding.
-            </p>
-            
-            <p class="text-lg leading-relaxed p-3 bg-blue-50 rounded-lg shadow-sm">
-                The process begins when we <strong>gather</strong> Christians who are fluent in their mother tongue. We then <strong>train</strong> these believers extensively in the principles and rigorous methods of Bible translation. Equipped with this knowledge, they <strong>translate</strong> the Scriptures, typically working from Hindi or another existing Bible version, into their own language. A critical step follows: the draft is rigorously <strong>validated</strong> by the entire community to ensure it achieves faithfulness to the original text, clarity, and natural language use. Only after this approval is the Bible <strong>printed and distributed</strong> to the local churches, successfully delivering God's Word into the hands of the people.
-            </p>
-
-            <p class="mt-6 italic text-gray-600">
-                This process ensures the translation remains faithful to God’s Word and understandable to the people.
-            </p>
-        </section>
-        
-        <!-- 3. Project Vision & Focus -->
-        <section class="bg-primary-blue text-white p-6 md:p-10 rounded-xl shadow-xl">
-            <h2 class="text-3xl font-bold mb-6 text-white border-b border-white/50 pb-2">Project Vision: Focused & Flexible</h2>
-            <p class="text-lg leading-relaxed mb-6">
-                This ministry focuses on making God’s Word available to <strong class="text-yellow-300">minority language groups</strong>, translating one language at a time, aiming for the fastest possible completion.
-            </p>
-            <ul class="space-y-3 list-disc list-inside text-lg font-light">
-                <li>We intentionally avoid building a heavy organizational structure.</li>
-                <li>We remain <strong>simple, flexible, and field-focused</strong>.</li>
-                <li>Our current translation focus is the <strong class="text-yellow-300">Bhojpuri language</strong>.</li>
-            </ul>
-        </section>
-
-        <!-- 4. Current Projects -->
-        <section class="bg-white p-6 md:p-10 rounded-xl shadow-lg">
-            <h2 class="text-3xl font-bold mb-6 text-primary-blue border-b pb-2">Current Projects</h2>
-            <div class="space-y-6">
-                
-                <!-- Project 1: Bhojpuri Translation -->
-                <div>
-                    <div class="flex justify-between mb-1">
-                        <span class="text-lg font-semibold text-primary-blue">Bhojpuri language Translation</span>
-                        <span class="text-lg font-semibold text-gray-600">10%</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Oasis -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-blue-400 hover:shadow-xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6 text-blue-600 group-hover:scale-110 transition">
+                        <i data-lucide="droplets" class="w-7 h-7"></i>
                     </div>
-                    <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                        <div class="bg-accent-teal h-4 rounded-full transition-all duration-300" style="width: 10%;"></div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2 font-heading">Oasis</h3>
+                    <p class="text-sm text-stone-500 mb-4 italic font-serif">"A place of help, hope, and healing."</p>
+                    <ul class="text-stone-600 space-y-3 text-sm">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Supporting the poor & needy</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Biblical guidance</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Skill development</li>
+                    </ul>
                 </div>
 
-                <!-- Project 2: Church Building -->
-                <div>
-                    <div class="flex justify-between mb-1">
-                        <span class="text-lg font-semibold text-primary-blue">Church building in XX</span>
-                        <span class="text-lg font-semibold text-gray-600">80%</span>
+                <!-- Scripture -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-amber-500 hover:shadow-xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-amber-50 rounded-full flex items-center justify-center mb-6 text-amber-600 group-hover:scale-110 transition">
+                        <i data-lucide="book-open" class="w-7 h-7"></i>
                     </div>
-                    <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                        <div class="bg-accent-teal h-4 rounded-full transition-all duration-300" style="width: 80%;"></div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2 font-heading">Scripture</h3>
+                    <p class="text-sm text-stone-500 mb-4 italic font-serif">"God's Word in every tongue."</p>
+                    <ul class="text-stone-600 space-y-3 text-sm">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Bible Translation</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Teaching Bible to youth</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Scripture engagement</li>
+                    </ul>
                 </div>
 
-                <!-- Project 3: Education Fund -->
-                <div>
-                    <div class="flex justify-between mb-1">
-                        <span class="text-lg font-semibold text-primary-blue">Education Fund for Bhojpuri</span>
-                        <span class="text-lg font-semibold text-gray-600">50%</span>
+                <!-- Fellowship -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-emerald-500 hover:shadow-xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-emerald-50 rounded-full flex items-center justify-center mb-6 text-emerald-600 group-hover:scale-110 transition">
+                        <i data-lucide="users" class="w-7 h-7"></i>
                     </div>
-                    <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                        <div class="bg-accent-teal h-4 rounded-full transition-all duration-300" style="width: 50%;"></div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2 font-heading">Fellowship</h3>
+                    <p class="text-sm text-stone-500 mb-4 italic font-serif">"Edification & spiritual growth."</p>
+                    <ul class="text-stone-600 space-y-3 text-sm">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Weekly meetings</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Bible study groups</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Spiritual upliftment</li>
+                    </ul>
                 </div>
 
-            </div>
-        </section>
-
-
-        <!-- 5. How You Can Help -->
-        <section class="bg-white p-6 md:p-10 rounded-xl shadow-lg border-l-4 border-red-500">
-            <h2 class="text-3xl font-bold mb-6 text-primary-blue border-b pb-2">How You Can Help</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Call to Action -->
-                <div>
-                    <p class="text-xl leading-relaxed mb-4">
-                        God has always provided for this ministry, and He continues to open doors. If the Lord prompts you to support this work, your <strong class="text-red-500">prayers and financial support</strong> are invaluable for the Kingdom.
-                    </p>
-                    <a href="#" class="inline-block bg-accent-teal hover:bg-teal-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
-                        Join Our WhatsApp Group for Updates
-                    </a>
-                </div>
-                <!-- Transparency Box -->
-                <div class="bg-teal-50 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-3 text-accent-teal">Transparency and Updates</h3>
-                    <p class="font-medium mb-2">In our WhatsApp group, we share:</p>
-                    <ul class="list-disc list-outside ml-5 space-y-1">
-                        <li>Ongoing updates and prayer requests.</li>
-                        <li>Photos and reports from the translation field.</li>
-                        <li><strong class="text-accent-teal">Monthly bank statements for complete financial transparency.</strong></li>
+                <!-- Mission -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border-t-4 border-red-400 hover:shadow-xl transition duration-300 group">
+                    <div class="w-14 h-14 bg-red-50 rounded-full flex items-center justify-center mb-6 text-red-600 group-hover:scale-110 transition">
+                        <i data-lucide="globe-2" class="w-7 h-7"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-stone-900 mb-2 font-heading">Mission</h3>
+                    <p class="text-sm text-stone-500 mb-4 italic font-serif">"Faith in action."</p>
+                    <ul class="text-stone-600 space-y-3 text-sm">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Mission field visits</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Church infrastructure</li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-accent mt-0.5"></i> Education support</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- 6. General Costs (Financial) -->
-        <section class="space-y-8">
-            <h2 class="text-3xl font-bold text-primary-blue text-center">General Cost Associated with a Project</h2>
-
-            <!-- Translation Needs -->
-            <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-4 text-accent-teal">Translation Team Support</h3>
-                <p class="mb-6 text-lg">
-                    We gather about 20 Christians for several weeks of training. Most are daily-wage workers who willingly sacrifice their income. Supporting them allows them to serve without financial burden.
-                </p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    <!-- Cost Card 1 -->
-                    <div class="p-4 bg-yellow-50 rounded-lg shadow-inner">
-                        <p class="text-xl font-semibold">Training Room / Shelter Rental</p>
-                        <p class="text-2xl font-bold text-red-600">~₹10,000</p>
-                    </div>
-                    <!-- Cost Card 2 -->
-                    <div class="p-4 bg-yellow-50 rounded-lg shadow-inner">
-                        <p class="text-xl font-semibold">Daily Food per Person</p>
-                        <p class="text-2xl font-bold text-red-600">~₹100</p>
-                    </div>
-                    <!-- Cost Card 3 -->
-                    <div class="p-4 bg-yellow-50 rounded-lg shadow-inner">
-                        <p class="text-xl font-semibold">Daily Wage Support per Person</p>
-                        <p class="text-2xl font-bold text-red-600">~₹100</p>
-                    </div>
-                    <!-- Cost Card 4 -->
-                    <div class="p-4 bg-yellow-50 rounded-lg shadow-inner">
-                        <p class="text-xl font-semibold">Transportation Costs (Initial)</p>
-                        <p class="text-2xl font-bold text-red-600">~₹10,000</p>
-                    </div>
-                    <!-- Cost Card 5 -->
-                    <div class="p-4 bg-yellow-50 rounded-lg shadow-inner">
-                        <p class="text-xl font-semibold">Translation Day Wage per Person</p>
-                        <p class="text-2xl font-bold text-red-600">~₹100</p>
-                    </div>
+        <!-- 2. Vision & Mission Statement -->
+        <section id="vision" class="bg-primary rounded-2xl overflow-hidden shadow-xl">
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <div class="p-12 md:p-16 text-white relative">
+                     <div class="absolute top-0 left-0 w-full h-full bg-blue-900/50 z-0"></div>
+                     <div class="relative z-10">
+                        <div class="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center mb-6">
+                            <i data-lucide="eye" class="w-6 h-6 text-amber-300"></i>
+                        </div>
+                        <h2 class="text-3xl font-heading font-bold mb-6 text-amber-300">Our Vision</h2>
+                        <p class="leading-relaxed text-blue-100 text-lg">
+                            To build spiritually strong and thriving communities where Scripture transforms lives, churches grow in strength and purpose, and families flourish in unity. We envision a future where every individual—especially the downtrodden—has access to education, guidance, and hope.
+                        </p>
+                     </div>
                 </div>
-            </div>
-
-            <!-- Printing Needs -->
-            <div class="bg-primary-blue text-white p-6 md:p-10 rounded-xl shadow-lg">
-                <h3 class="text-2xl font-bold mb-4 text-yellow-300">Printing Needs</h3>
-                <p class="mb-6 text-lg font-light">
-                    Printing and distribution require significant cost. We aim to provide Bibles free of cost or at minimal cost to poor communities. Printing presses require a minimum run of 500 Bibles.
-                </p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div class="p-4 bg-primary-blue/70 rounded-lg shadow-md">
-                        <p class="text-xl font-semibold text-white">Bible Layout & Design</p>
-                        <p class="text-2xl font-bold text-yellow-300">₹10,000</p>
+                <div class="p-12 md:p-16 bg-stone-100 text-stone-800">
+                    <div class="w-12 h-12 bg-stone-200 rounded-lg flex items-center justify-center mb-6">
+                        <i data-lucide="compass" class="w-6 h-6 text-primary"></i>
                     </div>
-                    <div class="p-4 bg-primary-blue/70 rounded-lg shadow-md">
-                        <p class="text-xl font-semibold text-white">Printing 500 Bibles</p>
-                        <p class="text-2xl font-bold text-yellow-300">₹5,00,000</p>
-                    </div>
+                    <h2 class="text-3xl font-heading font-bold mb-6 text-primary">Our Mission</h2>
+                    <p class="leading-relaxed text-stone-600 text-lg">
+                        OSFM exists to glorify God by bringing hope, healing, and transformation to individuals and communities through Scripture translation, Christ-centered teaching, compassionate care, and practical empowerment. We are committed to equipping the next generation.
+                    </p>
                 </div>
             </div>
         </section>
-        
-        <!-- 7. Supporting People in the Field -->
-        <section class="bg-white p-6 md:p-10 rounded-xl shadow-lg border-r-4 border-accent-teal">
-            <h2 class="text-3xl font-bold mb-6 text-primary-blue border-b pb-2">Supporting People in the Field</h2>
-            <p class="text-lg leading-relaxed mb-6">
-                Although translation is our main focus, we also encounter many people in genuine need. Whenever possible, we extend the love of Christ by providing practical help alongside the ministry of His Word:
-            </p>
-            <ul class="list-disc list-outside ml-5 text-lg space-y-2">
-                <li>Providing food and shelter.</li>
-                <li>Supporting children’s education.</li>
-                <li>Assisting families in building simple shelters.</li>
-            </ul>
-        </section>
 
-        <!-- 8. Leadership -->
-        <section class="space-y-8">
-            <h2 class="text-3xl font-bold text-primary-blue text-center border-b pb-2">Who Is Behind This Ministry?</h2>
+        <!-- 3. The Urgent Need (Heart Language) -->
+        <section id="need" class="scroll-mt-24">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-stone-900 font-heading">Why Translation Matters</h2>
+                <div class="w-24 h-1 bg-accent mx-auto mt-6 rounded-full opacity-50"></div>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Brother Christopher Card -->
-                <div class="bg-white p-6 rounded-xl shadow-xl transition hover:shadow-2xl">
-                    <div class="flex flex-col sm:flex-row items-center space-x-4">
-                        <!-- Placeholder Image/Icon -->
-                        <div class="flex-shrink-0 w-24 h-24 bg-accent-teal rounded-full flex items-center justify-center text-white text-3xl font-serif mb-4 sm:mb-0">C</div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-primary-blue">Brother Christopher</h3>
-                            <p class="text-lg font-medium text-gray-600">Ministry Overseer & Translator Trainer</p>
+            <div class="bg-red-50 rounded-2xl p-8 md:p-12 border border-red-100 mb-12 relative overflow-hidden">
+                 <!-- Decorative BG pattern -->
+                 <div class="absolute top-0 right-0 opacity-5">
+                    <i data-lucide="alert-triangle" class="w-64 h-64"></i>
+                 </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-start relative z-10">
+                    <div class="flex-shrink-0">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center text-red-600">
+                            <i data-lucide="alert-circle" class="w-8 h-8"></i>
                         </div>
                     </div>
-                    <p class="mt-4 text-base leading-relaxed border-t pt-4">
-                        Brother Christopher has been serving in this ministry for over 10 years, following previous service with EU. Though originally from Tamil Nadu, he spends most of his time in the mission fields of North India. He trains local Christians and oversees the entire ministry with dedication and humility.
+                    <div>
+                        <h3 class="text-2xl font-bold text-stone-900 mb-4 font-heading">The Crisis of Extinction</h3>
+                        <p class="text-lg text-stone-700 mb-4 leading-relaxed">
+                            Without Scripture in their own tongue, languages gradually weaken and disappear. Recent statistics show that <strong class="text-red-700 bg-red-100 px-1 rounded">nearly 60 languages have vanished in the last 50 years</strong>.
+                        </p>
+                        <p class="text-lg text-stone-700 leading-relaxed">
+                            Many communities are compelled to read Scripture only in regional languages (Hindi, Marathi, Odia) rather than their "Heart Language." If we do not act, an entire generation may miss the chance to hear God's Word in the language closest to their hearts.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Stats -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-sm border-b-4 border-primary text-center">
+                    <p class="text-6xl font-heading font-bold text-primary mb-2">20</p>
+                    <p class="text-stone-600 font-medium uppercase tracking-wide text-sm">Languages Initiated</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm border-b-4 border-accent text-center">
+                    <p class="text-6xl font-heading font-bold text-accent mb-2">6</p>
+                    <p class="text-stone-600 font-medium uppercase tracking-wide text-sm">New Testaments Done</p>
+                    <p class="text-xs text-stone-400 mt-1 font-serif italic">(In the last 3 years)</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-sm border-b-4 border-stone-400 text-center">
+                    <p class="text-6xl font-heading font-bold text-stone-600 mb-2">500+</p>
+                    <p class="text-stone-600 font-medium uppercase tracking-wide text-sm">Groups Still Waiting</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Our Process & Team Support -->
+        <section id="process" class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-stone-100">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Methodology -->
+                <div>
+                    <h2 class="text-3xl font-bold text-primary mb-8 font-heading">Translation Methodology</h2>
+                    <p class="text-stone-600 mb-8 text-lg">
+                        We identify languages without Scripture and meet with communities to emphasize the importance of their mother tongue.
+                    </p>
+                    <div class="space-y-8">
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl font-heading border border-primary/20">1</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-stone-900 font-heading">Team Selection</h4>
+                                <p class="text-stone-600 mt-1">We identify 20–25 people (for NT) or 30–35 (for OT) fluent in both mother tongue and regional language. The team is a mix of elders (strong in vernacular) and youth.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl font-heading border border-primary/20">2</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-stone-900 font-heading">Training Week</h4>
+                                <p class="text-stone-600 mt-1">A one-week intensive training covering translation methodology. We cover all expenses: food, accommodation, and travel.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-xl font-heading border border-primary/20">3</div>
+                            <div>
+                                <h4 class="font-bold text-xl text-stone-900 font-heading">Drafting & Checking</h4>
+                                <p class="text-stone-600 mt-1">Translators draft from gateway languages. They perform self-checks for key terms, followed by rigorous group checking sessions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cost Card -->
+                <div class="bg-accent-bg rounded-xl p-8 border border-amber-100 shadow-inner">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="p-2 bg-amber-100 rounded-lg text-amber-700"><i data-lucide="coins"></i></div>
+                        <h3 class="text-2xl font-bold text-stone-800 font-heading">Sponsor a Project</h3>
+                    </div>
+                    <p class="text-stone-600 mb-8 italic font-serif">
+                        Most translators are daily-wage workers who sacrifice income to serve. We provide minimum support to enable them to work faithfully.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center p-4 bg-white rounded-lg shadow-sm">
+                            <span class="text-stone-600 font-medium">Training Week Venue</span>
+                            <span class="font-bold text-stone-900 font-mono">₹10,000</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white rounded-lg shadow-sm">
+                            <span class="text-stone-600 font-medium">Food / Person / Day</span>
+                            <span class="font-bold text-stone-900 font-mono">₹100</span>
+                        </div>
+                        <div class="flex justify-between items-center p-4 bg-white rounded-lg shadow-sm">
+                            <span class="text-stone-600 font-medium">Initial Transport</span>
+                            <span class="font-bold text-stone-900 font-mono">₹10,000</span>
+                        </div>
+                        <div class="mt-8 pt-6 border-t border-amber-200">
+                            <div class="flex justify-between items-center">
+                                <span class="text-lg font-bold text-primary font-heading">Bible Printing (500 copies)</span>
+                                <span class="font-bold text-primary font-mono text-lg">₹5,00,000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Local Activities & Field Support -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-stone-100">
+            <div class="order-2 md:order-1">
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-stone-100 p-6 rounded-lg text-center border border-stone-200">
+                        <i data-lucide="languages" class="w-8 h-8 text-primary mx-auto mb-3"></i>
+                        <span class="font-bold text-stone-800 block text-sm uppercase tracking-wide">Spoken English</span>
+                        <span class="text-xs text-stone-500">For village children</span>
+                    </div>
+                    <div class="bg-stone-100 p-6 rounded-lg text-center border border-stone-200">
+                        <i data-lucide="brain-circuit" class="w-8 h-8 text-accent mx-auto mb-3"></i>
+                        <span class="font-bold text-stone-800 block text-sm uppercase tracking-wide">Mental Health</span>
+                        <span class="text-xs text-stone-500">Awareness</span>
+                    </div>
+                    <div class="bg-stone-100 p-6 rounded-lg text-center col-span-2 border border-stone-200">
+                        <i data-lucide="heart-handshake" class="w-8 h-8 text-emerald-600 mx-auto mb-3"></i>
+                        <span class="font-bold text-stone-800 block uppercase tracking-wide">Counselling</span>
+                        <span class="text-xs text-stone-500">For students dealing with addiction or depression</span>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-stone-900 mb-6 font-heading">Beyond Translation</h2>
+                <p class="text-lg text-stone-600 mb-6">
+                    We extend the love of Christ by providing practical help alongside His Word.
+                </p>
+                <ul class="space-y-4 text-stone-700">
+                    <li class="flex items-start gap-3 p-3 bg-stone-50 rounded-lg">
+                        <div class="mt-1.5 w-2 h-2 bg-accent rounded-full shrink-0"></div> 
+                        <span><strong>Education:</strong> Identifying students who cannot afford fees and helping them obtain basic education.</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-stone-50 rounded-lg">
+                        <div class="mt-1.5 w-2 h-2 bg-accent rounded-full shrink-0"></div> 
+                        <span><strong>Life Skills:</strong> Personality development and English classes for students struggling in school.</span>
+                    </li>
+                    <li class="flex items-start gap-3 p-3 bg-stone-50 rounded-lg">
+                        <div class="mt-1.5 w-2 h-2 bg-accent rounded-full shrink-0"></div> 
+                        <span><strong>Infrastructure:</strong> Assisting North Indian churches in developing proper infrastructure.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 6. Call to Action / Help -->
+        <section id="donate" class="relative bg-primary rounded-2xl p-8 md:p-16 overflow-hidden shadow-2xl">
+            <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+                <div class="text-white">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 font-heading">How You Can Help</h2>
+                    <p class="text-lg text-blue-100 mb-8 leading-relaxed">
+                        God has provided for this ministry through faithful partners. If the Lord prompts you, your <strong class="text-amber-300">prayers and financial support</strong> help us reach the unreached.
+                    </p>
+                    <a href="#" class="inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-8 rounded-full shadow-lg transition transform hover:scale-105">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Join WhatsApp for Updates
+                    </a>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg text-stone-800">
+                    <h3 class="text-xl font-bold text-primary mb-6 flex items-center gap-2 font-heading">
+                        <i data-lucide="shield-check" class="text-accent"></i> Transparency Promise
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3 border-b border-stone-100 pb-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5"></i>
+                            <span class="text-stone-600">Regular photo reports from the field.</span>
+                        </li>
+                        <li class="flex items-start gap-3 border-b border-stone-100 pb-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5"></i>
+                            <span class="text-stone-600">Specific prayer requests.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-600 mt-0.5"></i>
+                            <span class="text-stone-800 font-bold">Monthly bank statements provided to all donors.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Serving Team -->
+        <section class="text-center">
+            <h2 class="text-3xl font-bold text-stone-900 mb-12 font-heading">Serving Team</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Bro Christopher -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300 border border-stone-100">
+                    <div class="w-20 h-20 bg-primary text-white text-3xl font-bold rounded-full flex items-center justify-center mx-auto mb-4 shadow-md font-heading">C</div>
+                    <h3 class="text-xl font-bold text-stone-900 font-heading">Christopher Thomas</h3>
+                    <p class="text-primary font-medium text-sm mb-4 uppercase tracking-wider">Overseer & Trainer</p>
+                    <p class="text-stone-600 text-sm leading-relaxed font-serif">
+                        Over 10 years of service. Originally from Tamil Nadu, he spends most of his time in the North India mission fields, training locals with dedication and humility.
                     </p>
                 </div>
 
-                <!-- Samuel Jacob Card -->
-                <div class="bg-white p-6 rounded-xl shadow-xl transition hover:shadow-2xl">
-                    <div class="flex flex-col sm:flex-row items-center space-x-4">
-                        <!-- Placeholder Image/Icon -->
-                        <div class="flex-shrink-0 w-24 h-24 bg-primary-blue rounded-full flex items-center justify-center text-white text-3xl font-serif mb-4 sm:mb-0">S</div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-primary-blue">
-                                <a href="https://www.linkedin.com/in/samueldotj/" target="_blank" class="hover:text-accent-teal transition duration-200">Samuel Jacob</a>
-                            </h3>
-                            <p class="text-lg font-medium text-gray-600">Website & Coordination Support</p>
-                        </div>
-                    </div>
-                    <p class="mt-4 text-base leading-relaxed border-t pt-4">
-                        Samuel Jacob maintains this website and serves as the secondary contact person. He is especially available during USA time zones to support communication, updates, and coordination for the ministry.
+                <!-- Samuel Jacob -->
+                <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition duration-300 border border-stone-100">
+                    <div class="w-20 h-20 bg-stone-700 text-white text-3xl font-bold rounded-full flex items-center justify-center mx-auto mb-4 shadow-md font-heading">S</div>
+                    <h3 class="text-xl font-bold text-stone-900 font-heading">
+                        <a href="https://www.linkedin.com/in/samueldotj/" target="_blank" class="hover:text-primary flex items-center justify-center gap-2">
+                            Samuel Jacob <i data-lucide="linkedin" class="w-4 h-4"></i>
+                        </a>
+                    </h3>
+                    <p class="text-stone-500 font-medium text-sm mb-4 uppercase tracking-wider">Coordination & Accountability</p>
+                    <p class="text-stone-600 text-sm leading-relaxed font-serif">
+                        Supports communication and updates, specifically available during USA time zones to coordinate international support.
                     </p>
                 </div>
 
@@ -288,13 +431,19 @@
 
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-6 mt-16 px-4 md:px-8">
-        <div class="max-w-7xl mx-auto text-center text-sm">
-            <p>&copy; 2024 Scripture Translation Ministry. Dedicated to bringing God's Word to every mother tongue.</p>
-            <p class="mt-2">For US-friendly inquiries: Contact Samuel Jacob (Details in WhatsApp Group).</p>
+    <footer class="bg-stone-900 text-stone-400 py-12 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center gap-2 mb-6">
+                <i data-lucide="book-open" class="w-6 h-6 text-stone-500"></i>
+            </div>
+            <p class="mb-2 font-heading text-stone-300 text-lg">&copy; 2025 Oasis Scripture Fellowship Mission.</p>
+            <p class="text-sm italic font-serif">Bringing hope, healing, and transformation.</p>
         </div>
     </footer>
 
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

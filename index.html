@@ -182,40 +182,142 @@
                             <div>
                                 <h4 class="font-bold text-xl text-stone-900 font-heading">Drafting & Checking</h4>
                                 <p class="text-stone-600 mt-1">Translators draft from gateway languages. They perform self-checks for key terms, followed by rigorous group checking sessions.</p>
+                                <!-- Workshop Logistics Formatted to Match -->
+                                <div class="mt-5">
+                                    <h5 class="font-bold text-stone-800 font-heading text-lg mb-2">Workshop Overview</h5>
+                                    <ul class="space-y-2 text-stone-600">
+                                        <li class="flex items-center gap-2">
+                                            <i data-lucide="calendar-clock" class="w-4 h-4 text-accent"></i>
+                                            <span><strong>Duration:</strong> 5–7 Days</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <i data-lucide="users" class="w-4 h-4 text-accent mt-1"></i>
+                                            <span><strong>Participants:</strong> ~30 People <span class="text-stone-400 text-sm">(25 local translators + 5 facilitators)</span></span>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Cost Card -->
-                <div class="bg-accent-bg rounded-xl p-8 border border-amber-100 shadow-inner">
+                <!-- Cost Card / Project Expenses -->
+                <div class="bg-stone-50 rounded-xl p-6 border border-stone-200 h-full overflow-hidden">
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="p-2 bg-amber-100 rounded-lg text-amber-700"><i data-lucide="coins"></i></div>
-                        <h3 class="text-2xl font-bold text-stone-800 font-heading">Sponsor a Project</h3>
+                        <div class="p-2 bg-amber-100 rounded-lg text-amber-700"><i data-lucide="calculator"></i></div>
+                        <h3 class="text-2xl font-bold text-stone-800 font-heading">Project Expenses & Support</h3>
                     </div>
-                    <p class="text-stone-600 mb-8 italic font-serif">
-                        Most translators are daily-wage workers who sacrifice income to serve. We provide minimum support to enable them to work faithfully.
-                    </p>
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg shadow-sm">
-                            <span class="text-stone-600 font-medium">Training Week Venue</span>
-                            <span class="font-bold text-stone-900 font-mono">₹10,000</span>
+                    
+                    <!-- Table A: Workshop Expenses -->
+                    <div class="mb-8">
+                        <h4 class="font-bold text-primary mb-3 text-base font-heading flex items-center justify-between border-b border-primary/10 pb-2">
+                            <span>A. Workshop Expenses (5 Days)</span>
+                        </h4>
+                        <div class="overflow-x-auto rounded-lg border border-stone-200 bg-white">
+                            <table class="w-full text-sm text-left text-stone-600">
+                                <thead class="text-xs text-stone-500 uppercase bg-stone-50 border-b border-stone-100">
+                                    <tr>
+                                        <th class="px-3 py-2 font-semibold">Item</th>
+                                        <th class="px-3 py-2 font-semibold hidden sm:table-cell">Calculation</th>
+                                        <th class="px-3 py-2 font-semibold text-right">Total (INR)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stone-100">
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Food</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">30 × ₹450 × 5</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹67,500</td>
+                                    </tr>
+                                    <tr class="bg-stone-50/30 text-stone-400">
+                                        <td class="px-3 py-1 italic text-xs pl-4">↳ (7 days option)</td>
+                                        <td class="px-3 py-1 hidden sm:table-cell text-xs italic">30 × ₹450 × 7</td>
+                                        <td class="px-3 py-1 text-right italic text-xs">₹94,500</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Accommodation</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">30 × ₹500 × 5</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹75,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Hall, PA, Generator</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">Lump sum</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹20,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Participants Travel</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">Approx.</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹25,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Facilitators Travel</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">Approx.</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹50,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Stationery/Print</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">Approx.</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹15,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Misc. Expenses</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">Approx.</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹10,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Honorarium</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">3 × ₹7,000</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹21,000</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="bg-amber-50 text-stone-900 border-t border-amber-100">
+                                        <td class="px-3 py-3 font-bold text-xs uppercase tracking-wide">Total (5-Day)</td>
+                                        <td class="px-3 py-3 hidden sm:table-cell"></td>
+                                        <td class="px-3 py-3 text-right font-bold text-amber-700 font-mono text-base">₹2,83,500</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg shadow-sm">
-                            <span class="text-stone-600 font-medium">Food / Person / Day</span>
-                            <span class="font-bold text-stone-900 font-mono">₹100</span>
-                        </div>
-                        <div class="flex justify-between items-center p-4 bg-white rounded-lg shadow-sm">
-                            <span class="text-stone-600 font-medium">Initial Transport</span>
-                            <span class="font-bold text-stone-900 font-mono">₹10,000</span>
-                        </div>
-                        <div class="mt-8 pt-6 border-t border-amber-200">
-                            <div class="flex justify-between items-center">
-                                <span class="text-lg font-bold text-primary font-heading">Bible Printing (500 copies)</span>
-                                <span class="font-bold text-primary font-mono text-lg">₹5,00,000</span>
-                            </div>
+                         <p class="text-xs text-stone-500 mt-2 italic">*If 7 days, food & accommodation costs will vary.</p>
+                    </div>
+
+                    <!-- Table B: Ongoing Support -->
+                    <div>
+                        <h4 class="font-bold text-primary mb-3 text-base font-heading border-b border-primary/10 pb-2">
+                            B. Ongoing Review & Staff Support
+                        </h4>
+                        <div class="overflow-x-auto rounded-lg border border-stone-200 bg-white">
+                            <table class="w-full text-sm text-left text-stone-600">
+                                <thead class="text-xs text-stone-500 uppercase bg-stone-50 border-b border-stone-100">
+                                    <tr>
+                                        <th class="px-3 py-2 font-semibold">Item</th>
+                                        <th class="px-3 py-2 font-semibold hidden sm:table-cell">Calculation</th>
+                                        <th class="px-3 py-2 font-semibold text-right">Total (INR)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stone-100">
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Monthly Review Mtgs</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">₹5k × 15 grps</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹75,000</td>
+                                    </tr>
+                                    <tr class="hover:bg-stone-50/50">
+                                        <td class="px-3 py-2">Staff Salary + TA</td>
+                                        <td class="px-3 py-2 hidden sm:table-cell text-xs text-stone-400">3 staff × ₹35k</td>
+                                        <td class="px-3 py-2 text-right font-medium">₹1,05,000</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr class="bg-blue-50 text-stone-900 border-t border-blue-100">
+                                        <td class="px-3 py-3 font-bold text-xs uppercase tracking-wide">Monthly Need</td>
+                                        <td class="px-3 py-3 hidden sm:table-cell"></td>
+                                        <td class="px-3 py-3 text-right font-bold text-primary font-mono text-base">₹1,80,000</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
